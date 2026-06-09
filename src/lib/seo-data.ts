@@ -28,8 +28,8 @@ export const useCases: UseCaseData[] = [
         description: "Don't stress about doing everything today. Separate tasks into Daily, Weekly, and Monthly horizons to relieve immediate pressure."
       },
       {
-        title: "Mood & Reflection Logging",
-        description: "ADHD often comes with emotional dysregulation. Quickly capture your mood and micro-reflections alongside your habits."
+        title: "Micro-Reflection Logging",
+        description: "Capture quick thoughts, journal ideas, or lessons in the exact moment without complex interfaces."
       }
     ],
     suggestedHabits: [
@@ -91,15 +91,15 @@ export const useCases: UseCaseData[] = [
     ]
   },
   {
-    slug: "daily-mood-journal",
-    title: "Daily Mood Tracker & Reflection Journal | Praxim",
-    description: "Track your emotional wellbeing alongside your daily habits. A private, secure daily mood journal for mental health and self-discovery.",
-    h1: "Your Private Daily Mood Tracker & Journal.",
-    heroSubtitle: "Your habits and your mental health are deeply connected. Praxim lets you log your emotional state alongside your daily accomplishments.",
+    slug: "productivity-habit-tracker",
+    title: "Productivity Habit Tracker & Routine Planner | Praxim",
+    description: "Build unshakeable discipline with a pure productivity habit tracker. Stack your routines and achieve your goals distraction-free.",
+    h1: "A Pure Productivity Habit Tracker.",
+    heroSubtitle: "Praxim strips away the gamification and social features, leaving you with a powerful workspace to build consistent routines and drive real productivity.",
     benefits: [
       {
-        title: "One-Click Mood Logging",
-        description: "Select from 5 core emotional states to instantly log how you feel each day, directly from your primary dashboard."
+        title: "Laser-Focused Workflow",
+        description: "No ads, no social feeds, no unnecessary metrics. Just your habits and the discipline to check them off."
       },
       {
         title: "Micro-Reflection Journal",
@@ -107,13 +107,13 @@ export const useCases: UseCaseData[] = [
       },
       {
         title: "Secure & Private",
-        description: "Your thoughts belong to you. Praxim uses secure authentication and database infrastructure to ensure your reflections stay private."
+        description: "Your data belongs to you. Praxim uses secure authentication and database infrastructure to ensure your habits stay private."
       }
     ],
     suggestedHabits: [
-      "Write 3 things I'm grateful for",
-      "15 minutes of outdoor sunlight",
-      "Log end-of-day mood"
+      "Deep work block (90 mins)",
+      "Plan tomorrow's schedule",
+      "Review weekly goals"
     ]
   }
 ];

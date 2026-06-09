@@ -21,7 +21,7 @@ export default function LandingPage() {
               "price": "0",
               "priceCurrency": "USD"
             },
-            "description": "Praxim is a beautifully minimalist habit and mood tracker designed for deep focus and distraction-free productivity.",
+            "description": "Praxim is a beautifully minimalist habit tracker designed for deep focus and distraction-free productivity.",
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "4.9",
@@ -57,10 +57,10 @@ export default function LandingPage() {
         <section className="flex flex-col items-center justify-center px-6 pt-24 pb-20 text-center">
           <div className="max-w-4xl space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-both">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-500">
-              The Minimalist Habit & Mood Tracker <br className="hidden md:block" /> for Deep Focus.
+              The Minimalist Habit Tracker <br className="hidden md:block" /> for Deep Focus.
             </h1>
             <p className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed">
-              A beautifully simple workspace to stack your daily routines, track your mental wellbeing, and capture daily reflections. 
+              A beautifully simple workspace to stack your daily routines and capture reflections. 
               Built for focus, designed for momentum.
             </p>
             
@@ -111,9 +111,9 @@ export default function LandingPage() {
               <div className="w-12 h-12 bg-amber-500/10 rounded-2xl flex items-center justify-center mb-6">
                 <Activity className="h-6 w-6 text-amber-400" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Mood & Insight Analytics</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">Habit Consistency Analytics</h3>
               <p className="text-neutral-400 leading-relaxed">
-                Monitor your emotional consistency and habit completion with visual progress bars. Get real-time completion rates and an aggregated 30-day activity history.
+                Monitor your habit completion with visual progress bars. Get real-time completion rates and an aggregated 30-day activity history.
               </p>
             </article>
           </div>
@@ -137,7 +137,7 @@ export default function LandingPage() {
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 rounded-full bg-indigo-900/50 border-2 border-indigo-500 flex items-center justify-center text-xl font-bold text-white mb-6">2</div>
                 <h3 className="text-lg font-semibold text-white mb-2">Execute & Track</h3>
-                <p className="text-neutral-400 text-sm">Check off habits and log your mood with zero friction.</p>
+                <p className="text-neutral-400 text-sm">Check off habits and capture reflections with zero friction.</p>
               </div>
               
               <div className="flex flex-col items-center">
@@ -160,8 +160,8 @@ export default function LandingPage() {
                 <p className="text-neutral-400 mt-2">Yes, Praxim is completely free to use. We believe everyone deserves access to a clean, distraction-free productivity tool.</p>
               </article>
               <article>
-                <h3 className="text-lg font-medium text-white">Can I track my mood alongside habits?</h3>
-                <p className="text-neutral-400 mt-2">Absolutely. Praxim features an integrated mood tracker that allows you to log your daily emotional state alongside your micro-reflections.</p>
+                <h3 className="text-lg font-medium text-white">Can I journal in Praxim?</h3>
+                <p className="text-neutral-400 mt-2">Absolutely. Praxim features a micro-reflection journal that allows you to log short thoughts and ideas alongside your daily habits.</p>
               </article>
               <article>
                 <h3 className="text-lg font-medium text-white">Is my data secure?</h3>
@@ -183,7 +183,7 @@ export default function LandingPage() {
               Praxim
             </div>
             <p className="text-neutral-500 text-sm max-w-xs">
-              The minimalist habit and mood tracker built for deep focus and distraction-free productivity.
+              The minimalist habit tracker built for deep focus and distraction-free productivity.
             </p>
           </div>
           
@@ -193,7 +193,7 @@ export default function LandingPage() {
               <a href="/use-cases/adhd-habit-tracker" className="hover:text-indigo-400 transition-colors">ADHD Habit Tracker</a>
               <a href="/use-cases/minimalist-habit-tracker" className="hover:text-indigo-400 transition-colors">Minimalist Habit Tracker</a>
               <a href="/use-cases/student-routine-planner" className="hover:text-indigo-400 transition-colors">Student Routine Planner</a>
-              <a href="/use-cases/daily-mood-journal" className="hover:text-indigo-400 transition-colors">Daily Mood Journal</a>
+              <a href="/use-cases/productivity-habit-tracker" className="hover:text-indigo-400 transition-colors">Productivity Habit Tracker</a>
             </ul>
           </div>
 
