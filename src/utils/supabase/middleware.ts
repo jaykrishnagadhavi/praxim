@@ -43,14 +43,29 @@ export async function updateSession(request: NextRequest) {
     // no user, potentially respond by redirecting the user to the login page
     const url = request.nextUrl.clone();
     url.pathname = "/";
-    return NextResponse.redirect(url);
+    const redirectResponse = NextResponse.redirect(url);
+    
+    // VERY IMPORTANT: Attach the cookies from supabaseResponse to the redirect response
+    // If we don't do this, any refreshed tokens from getUser() will be lost!
+    supabaseResponse.cookies.getAll().forEach((cookie) => {
+      redirectResponse.cookies.set(cookie.name, cookie.value);
+    });
+    
+    return redirectResponse;
   }
 
   // If user is logged in and trying to access the landing page, redirect to dashboard
   if (user && request.nextUrl.pathname === "/") {
     const url = request.nextUrl.clone();
     url.pathname = "/dashboard";
-    return NextResponse.redirect(url);
+    const redirectResponse = NextResponse.redirect(url);
+    
+    // VERY IMPORTANT: Attach the cookies from supabaseResponse to the redirect response
+    supabaseResponse.cookies.getAll().forEach((cookie) => {
+      redirectResponse.cookies.set(cookie.name, cookie.value);
+    });
+    
+    return redirectResponse;
   }
 
   return supabaseResponse;
