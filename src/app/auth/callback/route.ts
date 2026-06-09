@@ -11,16 +11,10 @@ export async function GET(request: Request) {
     const { error } = await supabase.auth.exchangeCodeForSession(code);
     
     if (!error) {
-      const forwardedHost = request.headers.get("x-forwarded-host");
-      const isLocalEnv = process.env.NODE_ENV === "development";
-      
-      if (isLocalEnv) {
-        return NextResponse.redirect(`${origin}${next}`);
-      } else if (forwardedHost) {
-        return NextResponse.redirect(`https://${forwardedHost}${next}`);
-      } else {
-        return NextResponse.redirect(`${origin}${next}`);
-      }
+      // We always redirect to the exact origin the request came from.
+      // This prevents issues where Vercel's x-forwarded-host causes a redirect
+      // to a different domain, which would drop the newly set session cookies.
+      return NextResponse.redirect(`${origin}${next}`);
     }
   }
 

@@ -48,7 +48,16 @@ export async function updateSession(request: NextRequest) {
     // VERY IMPORTANT: Attach the cookies from supabaseResponse to the redirect response
     // If we don't do this, any refreshed tokens from getUser() will be lost!
     supabaseResponse.cookies.getAll().forEach((cookie) => {
-      redirectResponse.cookies.set(cookie.name, cookie.value);
+      redirectResponse.cookies.set({
+        name: cookie.name,
+        value: cookie.value,
+        domain: cookie.domain,
+        path: cookie.path,
+        maxAge: cookie.maxAge,
+        httpOnly: cookie.httpOnly,
+        secure: cookie.secure,
+        sameSite: cookie.sameSite,
+      });
     });
     
     return redirectResponse;
@@ -62,7 +71,16 @@ export async function updateSession(request: NextRequest) {
     
     // VERY IMPORTANT: Attach the cookies from supabaseResponse to the redirect response
     supabaseResponse.cookies.getAll().forEach((cookie) => {
-      redirectResponse.cookies.set(cookie.name, cookie.value);
+      redirectResponse.cookies.set({
+        name: cookie.name,
+        value: cookie.value,
+        domain: cookie.domain,
+        path: cookie.path,
+        maxAge: cookie.maxAge,
+        httpOnly: cookie.httpOnly,
+        secure: cookie.secure,
+        sameSite: cookie.sameSite,
+      });
     });
     
     return redirectResponse;
