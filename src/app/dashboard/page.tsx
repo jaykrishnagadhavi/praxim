@@ -5,8 +5,6 @@ import HabitList from "@/components/dashboard/HabitList";
 import MicroReflection from "@/components/dashboard/MicroReflection";
 import DashboardNav from "@/components/dashboard/DashboardNav";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
-import MoodTracker from "@/components/dashboard/MoodTracker";
-
 export default async function DashboardPage() {
   const cookieStore = await cookies();
   const supabase = createServerClient(
@@ -56,7 +54,6 @@ export default async function DashboardPage() {
         <main>
           <HabitList userId={session.user.id} />
           <MicroReflection userId={session.user.id} />
-          <MoodTracker userId={session.user.id} />
         </main>
       </div>
     </div>
