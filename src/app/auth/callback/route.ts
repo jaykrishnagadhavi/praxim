@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 
 export async function GET(request: Request) {
@@ -11,10 +12,24 @@ export async function GET(request: Request) {
     const { error } = await supabase.auth.exchangeCodeForSession(code);
     
     if (!error) {
-      // We always redirect to the exact origin the request came from.
-      // This prevents issues where Vercel's x-forwarded-host causes a redirect
-      // to a different domain, which would drop the newly set session cookies.
-      return NextResponse.redirect(`${origin}${next}`);
+      const redirectUrl = `${origin}${next}`;
+      const response = NextResponse.redirect(redirectUrl);
+      
+      // Explicitly copy cookies to the redirect response to prevent Next.js from dropping them
+      const cookieStore = await cookies();
+      const allCookies = cookieStore.getAll();
+      allCookies.forEach(cookie => {
+        response.cookies.set({
+          name: cookie.name,
+          value: cookie.value,
+          path: "/",
+          sameSite: "lax",
+          secure: process.env.NODE_ENV === "production",
+          maxAge: 31536000,
+        });
+      });
+
+      return response;
     }
   }
 

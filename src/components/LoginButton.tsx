@@ -17,6 +17,15 @@ export function LoginButton({ children, className, variant, showError = true }: 
   const [isLoading, setIsLoading] = React.useState(false);
   const [errorMessage, setErrorMessage] = React.useState<string | null>(null);
 
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("error") === "auth_failed") {
+        setErrorMessage("Authentication failed during callback. Please try again.");
+      }
+    }
+  }, []);
+
   const handleGoogleLogin = async () => {
     if (isLoading) return;
     setIsLoading(true);
