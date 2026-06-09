@@ -21,6 +21,7 @@ interface HabitLog {
   id: string;
   habit_id: string;
   status: string;
+  logged_date: string;
 }
 
 export default function HabitList({ userId }: { userId: string }) {
