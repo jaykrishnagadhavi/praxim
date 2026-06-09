@@ -70,7 +70,7 @@ export default function MoodTracker({ userId }: { userId: string }) {
           )}
         </div>
         
-        <div className="flex items-center justify-between gap-2 mt-6">
+        <div className="flex flex-wrap items-center justify-center sm:justify-between gap-2 mt-6">
           {MOODS.map((mood) => {
             const isSelected = selectedMood === mood.value;
             return (
@@ -79,21 +79,21 @@ export default function MoodTracker({ userId }: { userId: string }) {
                 onClick={() => handleMoodSelect(mood)}
                 disabled={isSubmitting || isSaved}
                 className={cn(
-                  "relative flex-1 flex flex-col items-center justify-center p-3 rounded-xl transition-all duration-300",
+                  "relative flex-1 min-w-[60px] flex flex-col items-center justify-center p-2 sm:p-3 rounded-xl transition-all duration-300",
                   "border border-neutral-800 hover:border-neutral-600 hover:bg-neutral-900/50",
                   isSelected && "border-indigo-500 bg-indigo-500/10 shadow-[0_0_15px_rgba(99,102,241,0.2)] scale-105",
                   (isSaved && !isSelected) && "opacity-40 grayscale pointer-events-none"
                 )}
               >
                 {isSubmitting && isSelected ? (
-                  <Loader2 className="h-8 w-8 animate-spin text-indigo-500 mb-2" />
+                  <Loader2 className="h-6 w-6 sm:h-8 sm:w-8 animate-spin text-indigo-500 mb-1 sm:mb-2" />
                 ) : (
-                  <span className="text-3xl mb-2 transition-transform duration-300 group-hover:scale-110">
+                  <span className="text-2xl sm:text-3xl mb-1 sm:mb-2 transition-transform duration-300 group-hover:scale-110">
                     {mood.emoji}
                   </span>
                 )}
                 <span className={cn(
-                  "text-[10px] font-medium tracking-wide uppercase",
+                  "text-[9px] sm:text-[10px] font-medium tracking-wide uppercase",
                   isSelected ? "text-indigo-400" : "text-neutral-500"
                 )}>
                   {mood.label}
